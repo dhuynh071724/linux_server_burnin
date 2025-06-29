@@ -1,0 +1,15 @@
+xorriso -as mkisofs \
+  -o Don_ubuntu_diag.iso \
+  -isohybrid-mbr /usr/lib/ISOLINUX/isohdpfx.bin \
+  -c isolinux/boot.cat \
+  -b isolinux/isolinux.bin \
+    -no-emul-boot \
+    -boot-load-size 4 \
+    -boot-info-table \
+  -eltorito-alt-boot \
+  -e boot/grub/efi.img \
+    -no-emul-boot \
+  -isohybrid-gpt-basdat \
+  -V "DonUbuntuDiag" \
+  -r -J -l \
+  iso_extract/
